@@ -11,7 +11,8 @@ export default function Home() {
           <div className='lg:pr-10'>
             <div className='w-44 lg:w-60 h-44 lg:h-60 overflow-hidden rounded-full'>
               <Image
-                src={'/matchIOS.png'}
+                unoptimized
+                src={'/profileImg.jpeg'}
                 width={4032}
                 height={3024}
                 alt='Profile image'
