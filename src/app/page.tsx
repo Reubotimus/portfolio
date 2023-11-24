@@ -11,9 +11,9 @@ export default function Home() {
           <div className='lg:pr-10'>
             <div className='w-44 lg:w-60 h-44 lg:h-60 overflow-hidden rounded-full'>
               <Image
-                src={'/IMG_3080.jpg'}
-                width={500}
-                height={500}
+                src={'/profileImg.jpg'}
+                width={4032}
+                height={3024}
                 alt='Profile image'
                 className='object-cover w-full h-full rounded-full'
               />
