@@ -10,9 +10,18 @@ export default function Home() {
     <main>
       <div className='flex flex-col justify-center h-screen'>
         <div className='flex flex-col lg:flex-row items-center justify-center'>
-        <div className='w-44 lg:w-60 h-44 lg:h-60'>
-          <Image src={'/matchIOS.png'} width={1920} height={1080} className="w-full h-auto rounded-lg" alt="matchIOS image" />
-        </div>
+          <div className='lg:pr-10'>
+            <div className='w-44 lg:w-60 h-44 lg:h-60'>
+              <Image
+                priority
+                src={'/profileImg.jpeg'}
+                width={4032}
+                height={3024}
+                alt='Profile image'
+                className='object-cover w-full h-full rounded-full'
+              />
+            </div>
+          </div>
 
           <h1 className='pt-5 lg:pt-0 font-mono text-2xl text-center lg:text-left'>
             Hey, I&apos;m a computer science graduate!
