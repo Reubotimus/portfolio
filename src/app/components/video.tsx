@@ -17,7 +17,7 @@ const VideoSln: React.FC<VideoSlnProps> = ({ url }) => {
 
   return (
     <div>
-      {hasWindow && <ReactPlayer url={url} className="react-player" playing loop width="100%" height={'300px'} controls={false}/>}
+      {hasWindow && <ReactPlayer url={url} className="react-player" playing loop width="100%" height={'400px'} controls={false}/>}
     </div>
   );
 };
