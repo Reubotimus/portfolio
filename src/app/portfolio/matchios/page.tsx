@@ -3,7 +3,6 @@ import React from 'react'
 import VideoSln from "../../components/video";
 import Link from "next/link";
 import Image from "next/image";
-import matchImg from './../../../../public/matchIOS.png'
 
 const matchiosPage = () => { 
 
@@ -62,7 +61,7 @@ const matchiosPage = () => {
         <div>
           <h1 className="font-mono text-xl pt-5">Image Set</h1>
           <div className="rounded overflow-hidden">
-            <Image src={matchImg} className="w-full h-auto rounded-lg" alt="matchIOS image" />
+            <Image src={'/matchIOS.png'} width={1920} height={1080} className="w-full h-auto rounded-lg" alt="matchIOS image" />
           </div>
         </div>
 

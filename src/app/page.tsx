@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import profileImg from '../../public/IMG_3080.jpg';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
           <div className='lg:pr-10'>
             <div className='w-44 lg:w-60 h-44 lg:h-60 overflow-hidden rounded-full'>
               <Image
-                src={profileImg}
+                src={'/IMG_3080.jpg'}
                 width={500}
                 height={500}
                 alt='Profile image'

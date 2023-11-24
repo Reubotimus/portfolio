@@ -1,9 +1,7 @@
 import { IoIosArrowBack } from "react-icons/io";
 import React from 'react'
-import VideoSln from "../../components/video";
 import Link from "next/link";
 import Image from "next/image";
-import hypercubeImg from './../../../../public/hypercube.png'
 
 const hypercubeprojectPage = () => { 
 
@@ -29,7 +27,7 @@ const hypercubeprojectPage = () => {
           <p className="text-xs"><strong>Client YT Channel: </strong><Link className='underline hover:text-teal-600' href={'https://youtube.com/@Mathologer'}>Link</Link></p>
         </div>
         
-        <Image src={hypercubeImg} className="w-full" alt='Hypercube website home'/>
+        <Image src={'/hypercube.png'} width={1920} height={1080} className="w-full" alt='Hypercube website home'/>
         
         <h1 className="font-mono text-xl pt-5">Project Description</h1>
         <p className="pl-2">

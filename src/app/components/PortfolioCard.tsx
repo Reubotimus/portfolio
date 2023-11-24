@@ -7,7 +7,7 @@ function PortfolioCard(portInfo: PortfolioCardInfo) {
   return (
     <div className="card w-full max-w-lg bg-base-100">
       <Link href={portInfo.linkPath}>
-        <figure className='rounded-t-lg'><Image src={portInfo.imagePath} width={500} height={100} alt={portInfo.imageAlt}></Image></figure>
+        <figure className='rounded-t-lg'><Image src={portInfo.imagePath} width={1920} height={1080} alt={portInfo.imageAlt}></Image></figure>
       </Link>
       <div className="card-body border-solid border-2 rounded-b-lg border-gray-600">
         <Link href={portInfo.linkPath}>
