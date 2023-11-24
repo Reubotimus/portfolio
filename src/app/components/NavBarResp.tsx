@@ -26,9 +26,6 @@ const NavBarResp = () => {
               </li>
             </ul>
           </div>
-          <div className='pl-5 text-md lg:text-xl'>
-            <ThemeSwitcher/>
-          </div>
           <div className='pl-5 text-lg lg:text-2xl'>
             <Link href='https://www.linkedin.com/in/harris-perdis-52786b255' target="_blank">
               <AiFillLinkedin/>
