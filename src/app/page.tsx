@@ -9,9 +9,9 @@ export default function Home() {
       <div className='flex flex-col items-center justify-center p-10 h-screen'>
         <div className='flex flex-col lg:flex-row items-center justify-center'>
           <div className='lg:pr-10'>
-            <div className='w-44 lg:w-60 h-44 lg:h-60 overflow-hidden rounded-full'>
+            <div className='w-44 lg:w-60 h-44 lg:h-60'>
               <Image
-                unoptimized
+                priority
                 src={'/profileImg.jpeg'}
                 width={4032}
                 height={3024}
