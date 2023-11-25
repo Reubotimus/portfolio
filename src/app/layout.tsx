@@ -25,7 +25,10 @@ export default function RootLayout({
             <NavBarResp/>
             {children}
             <Analytics />
-            <footer className='text-center bottom-0 font-sans py-10'>Site built with Nextjs, Typescript & Tailwind CSS. © 2023.</footer>
+            <div className='py-10 text-center bottom-0'>
+              <footer>Site built with Nextjs, Typescript & Tailwind CSS. © 2023.</footer>
+              <p className='text-xs'>Last update: 25/11/2023</p>
+            </div>
           </div>
         </Providers>
       </body>
