@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import NavBarResp from './components/NavBarResp'
 import Providers from './providers'
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
@@ -23,6 +24,7 @@ export default function RootLayout({
           <div className='px-10'>
             <NavBarResp/>
             {children}
+            <Analytics />
             <footer className='text-center bottom-0 font-sans py-10'>Site built with Nextjs, Typescript & Tailwind CSS. © 2023.</footer>
           </div>
         </Providers>
