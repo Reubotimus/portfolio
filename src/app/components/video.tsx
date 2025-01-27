@@ -6,7 +6,7 @@ interface Props {
   url: string;
 }
 
-const Video = ({ url }: Props) => {
+const video = ({ url }: Props) => {
   const [hasWindow, setHasWindow] = useState(false);
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const Video = ({ url }: Props) => {
   );
 };
 
-export default Video;
+export default video;
