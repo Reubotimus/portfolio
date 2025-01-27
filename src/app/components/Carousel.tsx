@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ProjectDTO from "../models/ProjectDTO";
-import Video from "./video";
+import Video from "./Video_temp";
 
 interface Props {
   project: ProjectDTO;
