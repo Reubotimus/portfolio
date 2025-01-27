@@ -1,40 +1,84 @@
-import React from 'react'
-import Image from 'next/image'
+"use client";
+import { useState } from "react";
+import Video from "./Video";
+import ProjectDTO from "../models/ProjectDTO";
 
-function carouselSimple() {
+interface Props {
+  project: ProjectDTO;
+}
+
+function Carousel({ project }: Props) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [...project.media.images];
+  if (project.media.video) {
+    slides.push(project.media.video);
+  }
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
-    <div className="carousel w-full">
-      <div id="slide1" className="carousel-item relative w-full">
-        <Image src={'/tinygrid5.png'} width={1920} height={1080} className="w-full" alt=''/>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle h-6 w-6">❮</a> 
-          <a href="#slide2" className="btn btn-circle h-6 w-6">❯</a>
+    <div className="my-5">
+      <div className="relative overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+          }}
+        >
+          {slides.map((src, index) => (
+            <div
+              key={index}
+              className="w-full flex-shrink-0 rounded-2xl shadow-md "
+            >
+              {project.media.video && index === slides.length - 1 ? (
+                <div className="flex justify-center items-center">
+                  <Video url={src} />
+                </div>
+              ) : (
+                <img
+                  src={src}
+                  alt={`Slide ${index + 1}`}
+                  className="w-full rounded-21xl"
+                />
+              )}
+            </div>
+          ))}
         </div>
-      </div> 
-      <div id="slide2" className="carousel-item relative w-full">
-        <Image src={'/tinygrid.png'} width={1920} height={1080} className="w-full" alt=''/>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle h-6 w-6">❮</a> 
-          <a href="#slide3" className="btn btn-circle h-6 w-6">❯</a>
-        </div>
-      </div> 
-      <div id="slide3" className="carousel-item relative w-full">
-        <Image src={'/tinygrid4.png'} width={1920} height={1080} className="w-full" alt=''/>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle h-6 w-6">❮</a> 
-          <a href="#slide4" className="btn btn-circle h-6 w-6">❯</a>
-        </div>
-      </div> 
-      <div id="slide4" className="carousel-item relative w-full">
-        <Image src={'/tinygrid3.png'} width={1920} height={1080} className="w-full" alt=''/>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" className="btn btn-circle h-6 w-6">❮</a> 
-          <a href="#slide1" className="btn btn-circle h-6 w-6">❯</a>
+
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+        >
+          ‹
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+        >
+          ›
+        </button>
+
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-3 w-3 rounded-full ${
+                currentIndex === index ? "bg-blue-500" : "bg-gray-300"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </div>
-
-  )
+  );
 }
 
-export default carouselSimple
+export default Carousel;

@@ -1,26 +1,33 @@
-'use client';
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 
-interface VideoSlnProps {
+interface Props {
   url: string;
 }
 
-const VideoSln: React.FC<VideoSlnProps> = ({ url }) => {
+const Video = ({ url }: Props) => {
   const [hasWindow, setHasWindow] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setHasWindow(true);
     }
   }, []);
 
   return (
     <div>
-      {hasWindow && <ReactPlayer url={url} className="react-player" playing loop width="100%" height={'400px'} controls={false}/>}
+      {hasWindow && (
+        <ReactPlayer
+          url={url}
+          className="react-player"
+          playing={false}
+          loop
+          controls={false}
+        />
+      )}
     </div>
   );
 };
 
-
-export default VideoSln
+export default Video;
