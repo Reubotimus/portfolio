@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBarResp from "./components/NavBarResp";
+import NavBar from "./components/NavBar";
 import Providers from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -18,19 +18,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        />
+        <link
+          rel="preload"
+          href="fonts/HubotSans-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Providers>
           <div className="px-10">
-            <NavBarResp />
+            <NavBar />
             {children}
             <Analytics />
-            <div className="py-10 text-center bottom-0">
-              <footer>
+            <footer
+              className="py-10 text-center bottom-0 space-y-2"
+              style={{ color: "#1944D0" }}
+            >
+              <p className="font-space">
                 Site built with Nextjs, Typescript & Tailwind CSS. © 2025.
-              </footer>
-              <p className="text-xs">Last update: 28/01/2025</p>
-            </div>
+              </p>
+              <p className="font-hubot text-xs">Last update: 17/02/2025</p>
+            </footer>
           </div>
         </Providers>
       </body>

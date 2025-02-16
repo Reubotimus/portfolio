@@ -1,7 +1,5 @@
 "use client";
 import Link from "next/link";
-import { IoIosArrowBack } from "react-icons/io";
-import Carousel from "../../components/Carousel";
 import Projects from "../data";
 import { useParams } from "next/navigation";
 
@@ -20,55 +18,54 @@ export default function ProjectPage() {
 
   return (
     <>
-      <div className="mt-5">
-        <Link href="/portfolio">
-          <button className="hover:text-teal-600">
-            <div className="flex flex-row items-center -m-1.5">
-              <div className="text-xl">
-                <IoIosArrowBack />
-              </div>
-              <h1 className="text-lg">Portfolio</h1>
-            </div>
-          </button>
-        </Link>
-      </div>
-
-      <div className="py-10 px-1 md:px-15 lg:px-15 max-w-6xl mx-auto">
-        <div className="flex flex-col justify-center">
+      <div className="py-10 max-w-5xl mx-auto" style={{ color: "#1944D0" }}>
+        <div className="mb-10" style={{ color: "#1944D0" }}>
+          <Link href="/#portfolio">
+            <button>
+              <h1 className="text-lg underline underline-offset-2 font-space">
+                {"< "}Portfolio
+              </h1>
+            </button>
+          </Link>
+        </div>
+        <div>
           <div className="pb-5">
-            <h1 className="font-mono text-4xl font-bold">{project.name}</h1>
-            <p className="text-md text-gray-600">
-              <strong>Date: </strong>
-              <span>{project.date}</span>
-            </p>
-            <p className="text-md text-gray-600">
-              <strong>Group: </strong>
-              {project.members.map((member, index) => (
-                <span key={index}>
-                  {member}
-                  {index < project.members.length - 1 && ", "}
-                </span>
-              ))}
-            </p>
-
-            {project.links.map((link, index) => (
-              <p key={index} className="text-md text-gray-600">
-                <strong>{link.name}: </strong>
-                {link.private ? (
-                  <span>Private (available on request)</span>
-                ) : (
-                  <Link
-                    className="underline hover:text-teal-600"
-                    href={link.link}
-                  >
-                    Link
-                  </Link>
-                )}
-              </p>
-            ))}
+            <p className="font-space text-md">{`{${project.type}}`}</p>
+            <h1 className="font-space text-5xl mt-2">{project.name}</h1>
+            <table className="font-space text-lg mt-5 border-separate border-spacing-y-2">
+              <tbody>
+                <tr>
+                  <td className="min-w-[125px] align-top">DATE:</td>
+                  <td>{project.date}</td>
+                </tr>
+                <tr>
+                  <td className="min-w-[125px] align-top">TEAM:</td>
+                  <td>
+                    {project.members.map((member, index) => (
+                      <p key={index}>
+                        {member}
+                        {index < project.members.length - 1 && ", "}
+                      </p>
+                    ))}
+                  </td>
+                </tr>
+                {project.links.map((link, index) => (
+                  <tr key={index}>
+                    <td className="min-w-[125px] align-top">{link.name}:</td>
+                    <td>
+                      {link.private ? (
+                        <span>Private (available on request)</span>
+                      ) : (
+                        <Link className="underline" href={link.link}>
+                          Link
+                        </Link>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-
-          <Carousel project={project} />
 
           <h1 className="font-mono text-xl pt-5">Project Description</h1>
           <p className="pl-2">{project.description}</p>

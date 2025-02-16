@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        hubot: ["Hubot Sans"],
+        space: ["Space Mono"],
+      },
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require("daisyui")],

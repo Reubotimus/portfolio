@@ -4,6 +4,7 @@ import NameLinkDTO from "./NameLinkDTO";
 
 export default interface ProjectDTO {
   name: string;
+  type: string;
   date: string;
   members: string[];
   links: NameLinkDTO[];

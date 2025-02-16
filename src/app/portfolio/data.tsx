@@ -17,10 +17,98 @@ const tags = [
   "CSS",
   "Forecasting",
   "Optimisation",
+  "Azure functions",
+  "Fastapi",
 ];
+
+const vicCameraLocationsData = {
+  name: "Vic-Roads-Cameras",
+  type: "Python App",
+  card: {
+    title: "Vic-Roads-Cameras",
+    date: "2/2025",
+    description:
+      "Built with my friend Reuben Cook, this project displays mobile camera locations in Victoria, scraped every 2 days from the VIC Roads website. The data is stored in a PostgreSQL database, and the scraper is an Azure Function. The website is built using FastAPI and Python.",
+    slug: "vic-camera-locations",
+    image: "/vic-camera-site.png",
+    imageAlt: "Screenshot of VIC Camera Locations website",
+    tags: [tags[1], tags[3], tags[10], tags[12], tags[16], tags[17]],
+  },
+  date: "2/2025",
+  members: [
+    "Harris Perdis [Software Developer]",
+    "Reuben Cook [Software Developer]",
+  ],
+  links: [
+    {
+      name: "GITHUB",
+      link: "https://github.com/HarrisAsync/vic-camera-locations",
+      private: false,
+    },
+    {
+      name: "WEBSITE",
+      link: "https://vic-roads-cameras.com",
+      private: false,
+    },
+  ],
+  description:
+    "This project displays mobile camera locations in Victoria, scraped from the VIC Roads website every 2 days. The data is stored in a PostgreSQL database, with the scraper running as an Azure Function. The website is built with FastAPI in Python.",
+  stages: [
+    {
+      title: "Ideation",
+      detail: "Initial planning and defining the scope of the project.",
+    },
+    {
+      title: "Web Scraping Setup",
+      detail:
+        "Developed the Azure Function to scrape data from the VIC Roads website.",
+    },
+    {
+      title: "Database Integration",
+      detail:
+        "Created and integrated the PostgreSQL database to store the scraped data.",
+    },
+    {
+      title: "FastAPI Development",
+      detail: "Built the FastAPI web app to serve the camera locations data.",
+    },
+    {
+      title: "Website Deployment",
+      detail: "Deployed the website for public access and testing.",
+    },
+  ],
+  skills: [
+    "Web scraping with Azure Functions",
+    "PostgreSQL integration",
+    "FastAPI for web development",
+    "Python programming",
+    "Collaborative development",
+  ],
+  architecture:
+    "The system is composed of an Azure Function that scrapes camera data from the VIC Roads website every 2 days. The scraped data is then stored in a PostgreSQL database. The front-end is powered by FastAPI, with the back-end responsible for handling requests and serving data to users. The system was designed for reliability, scalability, and ease of maintenance.",
+  media: {
+    images: ["/vic-camera-site.png"],
+  },
+  challenges: [
+    "Ensuring accurate and up-to-date scraping of data from the VIC Roads website.",
+    "Managing the synchronization of scraped data with the website.",
+    "Optimizing the FastAPI app for scalability.",
+  ],
+  futureImprovements: [
+    "Add real-time updates for camera locations.",
+    "Improve data visualization and interactivity on the website.",
+    "Expand the scope to include additional traffic data.",
+  ],
+  keyTakeaways: [
+    "Gained experience with web scraping and automation using Azure Functions.",
+    "Developed a deep understanding of FastAPI for building web apps.",
+    "Collaborated effectively with a teammate on a full-stack project.",
+  ],
+};
 
 const drowzalertData = {
   name: "Drowzalert",
+  type: "Python App",
   card: {
     title: "Drowzalert",
     date: "2/2023",
@@ -33,21 +121,21 @@ const drowzalertData = {
   },
   date: "2/2023",
   members: [
-    "Harris Perdis",
-    "Hung Ba Huynh",
-    "Jack Zheng",
-    "William Zhang",
-    "Swathi Subramanyan",
-    "Roshan Ravikumar",
+    "Harris Perdis [Computer Science Student]",
+    "Hung Ba Huynh [Computer Science Student]",
+    "Jack Zheng [Computer Science Student]",
+    "William Zhang [Engineering Student]",
+    "Swathi Subramanyan [IT Student]",
+    "Roshan Ravikumar [IT Student]",
   ],
   links: [
     {
-      name: "GitHub",
+      name: "GITHUB",
       link: "https://github.com/HarrisAsync/drowzalert",
       private: false,
     },
     {
-      name: "DevPost",
+      name: "DEVPOST",
       link: "https://devpost.com/software/sleepy_driver_detector",
       private: false,
     },
@@ -116,6 +204,7 @@ const drowzalertData = {
 
 const hypercubeprojectData = {
   name: "Hypercube Project",
+  type: "Website + Visualisations",
   card: {
     title: "Hypercube Project",
     date: "1/2021 - 2/2021",
@@ -127,20 +216,25 @@ const hypercubeprojectData = {
     tags: [tags[0], tags[1], tags[12], tags[13], tags[2], tags[10]],
   },
   date: "1/2021 - 2/2021",
-  members: ["Harris Perdis", "William Zhang", "James Vereker", "Regan Harper"],
+  members: [
+    "Harris Perdis [Computer Science Student]",
+    "William Zhang [Engineering Student]",
+    "James Vereker [Computer Science Student]",
+    "Regan Harper [IT Student]",
+  ],
   links: [
     {
-      name: "GitHub",
+      name: "GITHUB",
       link: "https://github.com/HarrisAsync/HyperCubeProject",
       private: false,
     },
     {
-      name: "Hypercube Website",
+      name: "WEBSITE",
       link: "https://harrisasync.github.io/HyperCubeProject/",
       private: false,
     },
     {
-      name: "Client YT Channel",
+      name: "CLIENT YT",
       link: "https://youtube.com/@Mathologer",
       private: false,
     },
@@ -204,6 +298,7 @@ const hypercubeprojectData = {
 
 const matchiosData = {
   name: "MatchIOS",
+  type: "iOS APP",
   card: {
     title: "MatchIOS",
     date: "1/2023 - 6/2023",
@@ -215,10 +310,13 @@ const matchiosData = {
     tags: [tags[5], tags[6], tags[7], tags[11], tags[10]],
   },
   date: "1/2023 - 6/2023",
-  members: ["Harris Perdis", "Nick Miller", "Hung Ba Huynh"],
+  members: [
+    "Harris Perdis [Software Developer]",
+    "Nick Miller [UI/UX Designer]",
+  ],
   links: [
     {
-      name: "GitHub",
+      name: "GITHUB",
       link: "",
       private: true,
     },
@@ -292,6 +390,7 @@ const matchiosData = {
 
 const tinygridData = {
   name: "Tinygrid",
+  type: "Python App",
   card: {
     title: "Tinygrid",
     date: "2/2022 - 10/2022",
@@ -315,14 +414,14 @@ const tinygridData = {
   },
   date: "2/2022 - 10/2022",
   members: [
-    "Harris Perdis",
-    "Hung Ba Huynh",
-    "Aldrich Lado Buntoro",
-    "Anirudh Prakash",
+    "Harris Perdis [Computer Science Student]",
+    "Hung Ba Huynh [Computer Science Student]",
+    "Aldrich Lado Buntoro [Computer Science Student]",
+    "Anirudh Prakash [Computer Science Student]",
   ],
   links: [
     {
-      name: "GitHub",
+      name: "GITHUB",
       link: "https://github.com/hbhungg/tinygrid",
       private: false,
     },
@@ -396,6 +495,7 @@ const tinygridData = {
 };
 
 const projects = [
+  vicCameraLocationsData as ProjectDTO,
   matchiosData as ProjectDTO,
   drowzalertData as ProjectDTO,
   tinygridData as ProjectDTO,
