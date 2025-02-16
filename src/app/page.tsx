@@ -8,7 +8,7 @@ const ProjectsPage = () => {
         className="font-hubot text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl my-32"
         style={{ color: "#1944D0" }}
       >
-        Hey, I&aposm Harris Perdis, a software{" "}
+        <span>Hey, I&apos;m Harris Perdis, a software </span>
         <span className="hidden md:inline">
           {" "}
           <br />{" "}
@@ -34,7 +34,7 @@ const ProjectsPage = () => {
         className="font-hubot mt-10 text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl w-3/4"
         style={{ color: "#1944D0" }}
       >
-        I&aposm Harris Perdis, a junior software developer with a strong
+        I&apos;m Harris Perdis, a junior software developer with a strong
         background in <i>Mathematics and Data Science</i>, I have spent the past
         year working as a junior developer, focusing primarily on web
         development. Throughout my academic and professional journey, I have
