@@ -15,6 +15,5 @@ const config: Config = {
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require("daisyui")],
-  darkMode: 'class'
 }
 export default config

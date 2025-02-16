@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/NavBar";
-import Providers from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
@@ -39,22 +38,20 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>
-          <div className="px-10">
-            <NavBar />
-            {children}
-            <Analytics />
-            <footer
-              className="py-10 text-center bottom-0 space-y-2"
-              style={{ color: "#1944D0" }}
-            >
-              <p className="font-space">
-                Site built with Nextjs, Typescript & Tailwind CSS. © 2025.
-              </p>
-              <p className="font-hubot text-xs">Last update: 17/02/2025</p>
-            </footer>
-          </div>
-        </Providers>
+        <div className="px-10">
+          <NavBar />
+          {children}
+          <Analytics />
+          <footer
+            className="py-10 text-center bottom-0 space-y-2"
+            style={{ color: "#1944D0" }}
+          >
+            <p className="font-space">
+              Site built with Nextjs, Typescript & Tailwind CSS. © 2025.
+            </p>
+            <p className="font-hubot text-xs">Last update: 17/02/2025</p>
+          </footer>
+        </div>
       </body>
     </html>
   );
