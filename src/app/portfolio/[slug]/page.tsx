@@ -89,7 +89,7 @@ export default function ProjectPage() {
                       {cell.paragraph.title ? (
                         <div className="my-8">
                           <p
-                            className="font-space text-sm"
+                            className="font-space text-sm pb-2"
                             style={{ color: "#1944D0" }}
                           >
                             {`{${cell.paragraph.title}}`}
@@ -118,7 +118,7 @@ export default function ProjectPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <p className="font-space text-sm pt-5">{`{SKILLS LEARNT}`}</p>
+              <p className="font-space text-sm pt-5 pb-2">{`{SKILLS LEARNT}`}</p>
               <div className="font-hubot">
                 {project.skills.map((skill, index) => (
                   <p key={index}>{`» ${skill}`}</p>
@@ -126,7 +126,7 @@ export default function ProjectPage() {
               </div>
             </div>
             <div>
-              <p className="font-space text-sm pt-5">{`{KEY TAKEAWAYS}`}</p>
+              <p className="font-space text-sm pt-5 pb-2">{`{KEY TAKEAWAYS}`}</p>
               <div className="font-hubot">
                 {project.keyTakeaways.map((takeaway, index) => (
                   <p key={index}>{`» ${takeaway}`}</p>
@@ -134,7 +134,7 @@ export default function ProjectPage() {
               </div>
             </div>
             <div>
-              <p className="font-space text-sm pt-5">{`{CHALLENGES FACED}`}</p>
+              <p className="font-space text-sm pt-5 pb-2">{`{CHALLENGES FACED}`}</p>
               <div className="font-hubot">
                 {project.challenges.map((challenge, index) => (
                   <p key={index}>{`» ${challenge}`}</p>
@@ -142,7 +142,7 @@ export default function ProjectPage() {
               </div>
             </div>
             <div>
-              <p className="font-space text-sm pt-5">{`{DEVELOPMENT STAGES}`}</p>
+              <p className="font-space text-sm pt-5 pb-2">{`{DEVELOPMENT STAGES}`}</p>
               <div className="font-hubot">
                 {project.stages.map((stage, index) => (
                   <p key={index}>
