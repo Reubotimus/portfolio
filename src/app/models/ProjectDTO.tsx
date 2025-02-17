@@ -1,20 +1,37 @@
 import CardDTO from "./CardDTO";
-import MediaDTO from "./MediaDTO";
 import NameLinkDTO from "./NameLinkDTO";
 
 export default interface ProjectDTO {
+  card: CardDTO;
   name: string;
   type: string;
   date: string;
   members: string[];
   links: NameLinkDTO[];
   description: string;
-  stages: { title: string; detail: string }[];
+  rows: Row[];
   skills: string[];
-  architecture: string;
-  media: MediaDTO;
   challenges: string[];
-  futureImprovements: string[];
   keyTakeaways: string[];
-  card: CardDTO;
+  stages: { title: string; detail: string }[];
+}
+
+export interface Row {
+  cells: Cell[];
+}
+
+export interface Cell {
+  paragraph?: ParagraphType;
+  image?: ImageType;
+}
+
+export interface ParagraphType {
+  title?: string;
+  body: string;
+}
+
+export interface ImageType {
+  url: string;
+  width: number;
+  height: number;
 }

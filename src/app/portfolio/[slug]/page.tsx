@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Projects from "../data";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function ProjectPage() {
   const { slug } = useParams();
@@ -67,48 +68,90 @@ export default function ProjectPage() {
             </table>
           </div>
 
-          <h1 className="font-mono text-xl pt-5">Project Description</h1>
-          <p className="pl-2">{project.description}</p>
+          {project.rows.map((row, rowIndex) => (
+            <div
+              className={`grid grid-cols-1 md:grid-cols-${row.cells.length} gap-4 py-2`}
+              key={rowIndex}
+            >
+              {row.cells.map((cell, cellIndex) => (
+                <div key={cellIndex}>
+                  {cell.image && (
+                    <Image
+                      className=" m-auto"
+                      width={cell.image.width}
+                      height={cell.image.height}
+                      src={cell.image.url}
+                      alt="image"
+                    />
+                  )}
+                  {cell.paragraph && (
+                    <>
+                      {cell.paragraph.title ? (
+                        <div className="my-8">
+                          <p
+                            className="font-space text-sm"
+                            style={{ color: "#1944D0" }}
+                          >
+                            {`{${cell.paragraph.title}}`}
+                          </p>
+                          <p
+                            className="font-hubot text-lg"
+                            style={{ color: "#1944D0" }}
+                          >
+                            {cell.paragraph.body}
+                          </p>
+                        </div>
+                      ) : (
+                        <p
+                          className="font-space text-lg"
+                          style={{ color: "#1944D0" }}
+                        >
+                          {cell.paragraph.body}
+                        </p>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
 
-          <h1 className="font-mono text-xl pt-5">Skills Learnt</h1>
-          <ul className="list-disc list-inside pl-2">
-            {project.skills.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-
-          <h1 className="font-mono text-xl pt-5">Key Takeaways</h1>
-          <ul className="list-disc list-inside pl-2">
-            {project.keyTakeaways.map((takeaway, index) => (
-              <li key={index}>{takeaway}</li>
-            ))}
-          </ul>
-
-          <h1 className="font-mono text-xl pt-5">Challenges Faced</h1>
-          <ul className="list-disc list-inside pl-2">
-            {project.challenges.map((challenge, index) => (
-              <li key={index}>{challenge}</li>
-            ))}
-          </ul>
-
-          <h1 className="font-mono text-xl pt-5">Development Stages</h1>
-          <ul className="text-md pl-2 list-inside">
-            {project.stages.map((stage, index) => (
-              <li key={index}>
-                <i>{stage.title}</i> - {stage.detail}
-              </li>
-            ))}
-          </ul>
-
-          <h1 className="font-mono text-xl pt-5">Architecture</h1>
-          <p className="pl-2">{project.architecture}</p>
-
-          <h1 className="font-mono text-xl pt-5">Future Improvements</h1>
-          <ul className="list-disc list-inside pl-2">
-            {project.futureImprovements.map((improvement, index) => (
-              <li key={index}>{improvement}</li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p className="font-space text-sm pt-5">{`{SKILLS LEARNT}`}</p>
+              <div className="font-hubot">
+                {project.skills.map((skill, index) => (
+                  <p key={index}>{`» ${skill}`}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="font-space text-sm pt-5">{`{KEY TAKEAWAYS}`}</p>
+              <div className="font-hubot">
+                {project.keyTakeaways.map((takeaway, index) => (
+                  <p key={index}>{`» ${takeaway}`}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="font-space text-sm pt-5">{`{CHALLENGES FACED}`}</p>
+              <div className="font-hubot">
+                {project.challenges.map((challenge, index) => (
+                  <p key={index}>{`» ${challenge}`}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="font-space text-sm pt-5">{`{DEVELOPMENT STAGES}`}</p>
+              <div className="font-hubot">
+                {project.stages.map((stage, index) => (
+                  <p key={index}>
+                    <b>{stage.title}</b> - {stage.detail}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

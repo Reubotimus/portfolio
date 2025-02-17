@@ -6,7 +6,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 const NavBar = () => {
   return (
     <div style={{ color: "#1944D0" }}>
-      <div className="navbar bg-base-100">
+      <div className="navbar">
         <div className="navbar-start">
           <Link href="/">
             <h1 className="text-2xl lg:text-3xl font-space">Harris Perdis</h1>
@@ -28,10 +28,7 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-      <hr
-        className="h-px bg-gray-600 border-0"
-        style={{ backgroundColor: "#1944D0" }}
-      ></hr>
+      <hr className="h-px border-0" style={{ backgroundColor: "#1944D0" }}></hr>
     </div>
   );
 };
