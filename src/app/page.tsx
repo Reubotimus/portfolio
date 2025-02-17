@@ -52,7 +52,7 @@ const ProjectsPage = () => {
         className="flex text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
         style={{ color: "#1944D0" }}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col font-space">
           <p>[Software]</p>
           <p>» NextJS</p>
           <p>» React</p>
@@ -61,7 +61,7 @@ const ProjectsPage = () => {
           <p>» SQL Mangement Studio</p>
           <p>» Git</p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col font-space">
           <p>[Languages]</p>
           <p>» Javascript</p>
           <p>» C#</p>
