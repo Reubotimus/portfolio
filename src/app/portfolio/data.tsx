@@ -24,6 +24,11 @@ const tags = [
 const vicCameraLocationsData: ProjectDTO = {
   name: "Vic-Roads-Cameras",
   type: "Python App",
+  headLineImage: {
+    url: "/vic-camera-site.png",
+    width: 800,
+    height: 600,
+  },
   card: {
     title: "Vic-Roads-Cameras",
     date: "2/2025",
@@ -172,6 +177,11 @@ const vicCameraLocationsData: ProjectDTO = {
 const drowzalertData: ProjectDTO = {
   name: "Drowzalert",
   type: "Python App",
+  headLineImage: {
+    url: "/drowzalert.jpeg",
+    width: 800,
+    height: 600,
+  },
   card: {
     title: "Drowzalert",
     date: "2/2023",
