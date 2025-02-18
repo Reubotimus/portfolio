@@ -9,7 +9,8 @@ export default interface ProjectDTO {
   members: string[];
   links: NameLinkDTO[];
   description: string;
-  rows: Row[]; // First Row must be image.
+  headLineImage: ImageType;
+  rows: Row[];
   skills: string[];
   challenges: string[];
   keyTakeaways: string[];
