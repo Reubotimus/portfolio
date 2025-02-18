@@ -12,14 +12,6 @@ export default function ProjectPage() {
 
   const projectIndex = Projects.findIndex((p) => p.card.slug === slug);
 
-  if (projectIndex === -1) {
-    return (
-      <div className="flex justify-center items-center text-xl font-bold p-6 sm:p-12 md:p-24 lg:p-32 xl:p-48">
-        Sorry, this project does not exist.
-      </div>
-    );
-  }
-
   const project = Projects[projectIndex];
 
   const nextIndex = (projectIndex + 1) % Projects.length;
@@ -50,6 +42,14 @@ export default function ProjectPage() {
       }
     }
   }, [clientWindowHeight]);
+
+  if (projectIndex === -1) {
+    return (
+      <div className="flex justify-center items-center text-xl font-hubot p-6 sm:p-12 md:p-24 lg:p-32 xl:p-48">
+        Sorry, this project does not exist.
+      </div>
+    );
+  }
 
   return (
     <>
