@@ -11,37 +11,37 @@ export default function ProjectPage() {
   const router = useRouter();
 
   const projectIndex = Projects.findIndex((p) => p.card.slug === slug);
-
   const project = Projects[projectIndex];
 
   const nextIndex = (projectIndex + 1) % Projects.length;
   const nextProject = Projects[nextIndex];
 
-  const [clientWindowHeight, setClientWindowHeight] = useState(0);
-
   const elementRef = useRef<HTMLDivElement | null>(null);
   const [hasNavigated, setHasNavigated] = useState(false);
 
-  const handleScroll = () => {
-    setClientWindowHeight(window.scrollY);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (!elementRef.current || hasNavigated) return;
 
-  useEffect(() => {
-    if (elementRef.current && !hasNavigated) {
-      const element = elementRef.current;
-      const elementTop = element.getBoundingClientRect().top + window.scrollY;
-
-      if (clientWindowHeight >= elementTop) {
-        setHasNavigated(true);
-        router.push(nextProject.card.slug + "#start");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setHasNavigated(true);
+            router.push(nextProject.card.slug + "#start");
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
       }
-    }
-  }, [clientWindowHeight]);
+    );
+
+    observer.observe(elementRef.current);
+
+    return () => observer.disconnect();
+  }, [hasNavigated, nextProject.card.slug, router]);
 
   if (projectIndex === -1) {
     return (
@@ -57,7 +57,10 @@ export default function ProjectPage() {
         <div className="mb-10" style={{ color: "#1944D0" }}>
           <Link href="/#portfolio">
             <button>
-              <h1 className="text-lg underline underline-offset-2 font-space">
+              <h1
+                id="start"
+                className="text-lg underline underline-offset-2 font-space"
+              >
                 {"< "}Portfolio
               </h1>
             </button>
@@ -65,10 +68,7 @@ export default function ProjectPage() {
         </div>
         <div>
           <div className="pb-5">
-            <p
-              id="start"
-              className="font-space text-md"
-            >{`{${project.type}}`}</p>
+            <p className="font-space text-md">{`{${project.type}}`}</p>
             <h1 className="font-space text-5xl mt-2">{project.name}</h1>
             <table className="font-space text-md md:text-lg mt-5 border-separate border-spacing-y-2">
               <tbody>
@@ -212,9 +212,7 @@ export default function ProjectPage() {
               <p className="font-hubot text-xl pt-1">Next Project</p>
               <p className="font-hubot text-sm">Scroll to View</p>
               <div className="relative pb-5 mt-20">
-                <div ref={elementRef}>
-                  <p className="font-space text-md">{`{${nextProject.type}}`}</p>
-                </div>
+                <p className="font-space text-md">{`{${nextProject.type}}`}</p>
                 <h1 className="font-space text-5xl mt-2">{nextProject.name}</h1>
                 <table className="font-space text-md md:text-lg mt-5 border-separate border-spacing-y-2">
                   <tbody>
@@ -256,9 +254,9 @@ export default function ProjectPage() {
                   </tbody>
                 </table>
               </div>
-              <div>
+              <div ref={elementRef}>
                 <Image
-                  className="m-auto mt-10"
+                  className="m-auto"
                   width={nextProject.headLineImage.width}
                   height={nextProject.headLineImage.height}
                   src={nextProject.headLineImage.url}
