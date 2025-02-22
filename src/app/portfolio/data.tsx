@@ -22,21 +22,18 @@ const tags = [
 ];
 
 const vicCameraLocationsData: ProjectDTO = {
-  name: "Vic-Roads-Cameras",
+  name: "vic-camera-locations",
   type: "Python App",
   headLineImage: {
     url: "/vic-camera-site.png",
-    width: 800,
-    height: 600,
+    width: 1909,
+    height: 1187,
   },
   card: {
-    title: "Vic-Roads-Cameras",
+    title: "vic-camera-locations",
     date: "2/2025",
-    description:
-      "Built with my friend Reuben Cook, this project displays mobile camera locations in Victoria, scraped every 2 days from the VIC Roads website. The data is stored in a PostgreSQL database, and the scraper is an Azure Function. The website is built using FastAPI and Python.",
     slug: "vic-camera-locations",
-    image: "/vic-camera-site.png",
-    imageAlt: "Screenshot of VIC Camera Locations website",
+    image: { url: "/vic-camera-site.png", width: 1909, height: 1187 },
     tags: [tags[1], tags[3], tags[10], tags[12], tags[16], tags[17]],
   },
   date: "2/2025",
@@ -56,172 +53,23 @@ const vicCameraLocationsData: ProjectDTO = {
       private: false,
     },
   ],
-  description:
-    "This project displays mobile camera locations in Victoria, scraped from the VIC Roads website every 2 days. The data is stored in a PostgreSQL database, with the scraper running as an Azure Function. The website is built with FastAPI in Python.",
   rows: [
     {
       cells: [
         {
           paragraph: {
-            title: "Architecture",
-            body: "The system is composed of an Azure Function that scrapes camera data from the VIC Roads website every 2 days. The scraped data is then stored in a PostgreSQL database. The front-end is powered by FastAPI, with the back-end responsible for handling requests and serving data to users. The system was designed for reliability, scalability, and ease of maintenance.",
+            title: "Project Description",
+            body: "This project outlines roads within Victoria, Australia where mobile speed and seatbelt / phone cameras are possibly parked or stationed. The vic roads website is typically updated monthly, with excel sheets which contain the columns road and suburb. Our website periodically scrapes for this data and updates tables within the database with this information.",
           },
         },
       ],
     },
-    {
-      cells: [
-        {
-          image: {
-            url: "/vic-camera-site.png",
-            width: 800,
-            height: 600,
-          },
-        },
-        {
-          paragraph: {
-            body: "The system is composed of an Azure Function that scrapes camera data from the VIC Roads website every 2 days. The scraped data is then stored in a PostgreSQL database. The front-end is powered by FastAPI, with the back-end responsible for handling requests and serving data to users. The system was designed for reliability, scalability, and ease of maintenance.",
-          },
-        },
-      ],
-    },
-    {
-      cells: [
-        {
-          paragraph: {
-            body: "The system is composed of an Azure Function that scrapes camera data from the VIC Roads website every 2 days. The scraped data is then stored in a PostgreSQL database. The front-end is powered by FastAPI, with the back-end responsible for handling requests and serving data to users. The system was designed for reliability, scalability, and ease of maintenance.",
-          },
-        },
-        {
-          image: {
-            url: "/vic-camera-site.png",
-            width: 800,
-            height: 600,
-          },
-        },
-      ],
-    },
-    {
-      cells: [
-        {
-          image: {
-            url: "/vic-camera-site.png",
-            width: 800,
-            height: 600,
-          },
-        },
-      ],
-    },
-    {
-      cells: [
-        {
-          image: {
-            url: "/vic-camera-site.png",
-            width: 800,
-            height: 600,
-          },
-        },
-        {
-          image: {
-            url: "/vic-camera-site.png",
-            width: 800,
-            height: 600,
-          },
-        },
-      ],
-    },
-  ],
-  skills: [
-    "Web scraping with Azure Functions",
-    "PostgreSQL integration",
-    "FastAPI for web development",
-    "Python programming",
-    "Collaborative development",
-  ],
-  challenges: [
-    "Ensuring accurate and up-to-date scraping of data from the VIC Roads website.",
-    "Managing the synchronization of scraped data with the website.",
-    "Optimizing the FastAPI app for scalability.",
-  ],
-  keyTakeaways: [
-    "Gained experience with web scraping and automation using Azure Functions.",
-    "Developed a deep understanding of FastAPI for building web apps.",
-    "Collaborated effectively with a teammate on a full-stack project.",
-  ],
-  stages: [
-    {
-      title: "Ideation",
-      detail: "Initial planning and defining the scope of the project.",
-    },
-    {
-      title: "Web Scraping Setup",
-      detail:
-        "Developed the Azure Function to scrape data from the VIC Roads website.",
-    },
-    {
-      title: "Database Integration",
-      detail:
-        "Created and integrated the PostgreSQL database to store the scraped data.",
-    },
-    {
-      title: "FastAPI Development",
-      detail: "Built the FastAPI web app to serve the camera locations data.",
-    },
-    {
-      title: "Website Deployment",
-      detail: "Deployed the website for public access and testing.",
-    },
-  ],
-};
-
-const drowzalertData: ProjectDTO = {
-  name: "Drowzalert",
-  type: "Python App",
-  headLineImage: {
-    url: "/drowzalert.jpeg",
-    width: 800,
-    height: 600,
-  },
-  card: {
-    title: "Drowzalert",
-    date: "2/2023",
-    description:
-      "As part of a small group, I competed in a 48hr hackathon hosted by UNIHACK. We developed a python app to detect closed eyelids as an early sign of drowsiness and fatigue in drivers, using OpenCV and pre-trained models.",
-    slug: "drowzalert",
-    image: "/drowzalert.jpeg",
-    imageAlt: "Photo of eyelids outlined",
-    tags: [tags[3], tags[4], tags[10]],
-  },
-  date: "2/2023",
-  members: [
-    "Harris Perdis [Computer Science Student]",
-    "Hung Ba Huynh [Computer Science Student]",
-    "Jack Zheng [Computer Science Student]",
-    "William Zhang [Engineering Student]",
-    "Swathi Subramanyan [IT Student]",
-    "Roshan Ravikumar [IT Student]",
-  ],
-  links: [
-    {
-      name: "GITHUB",
-      link: "https://github.com/HarrisAsync/drowzalert",
-      private: false,
-    },
-    {
-      name: "DEVPOST",
-      link: "https://devpost.com/software/sleepy_driver_detector",
-      private: false,
-    },
-  ],
-  description:
-    "As part of a small group, I competed in a 48-hour hackathon hosted by UNIHACK. We developed a Python app to detect closed eyelids as an early sign of drowsiness and fatigue in drivers, using OpenCV and pre-trained models.",
-  rows: [
     {
       cells: [
         {
           paragraph: {
             title: "Architecture",
-            body: "The application was prototyped on a laptop using an integrated webcam to capture live footage of the driver. We used facial landmarks to detect eyelid positions. These landmarks were formed via a series of points tracked through space and specifically mapped to the eyes. The Python libraries OpenCV (for camera access and image processing) and dlib (for facial landmark detection) were crucial for this operation.",
+            body: "The website comprises of three elements: an api built with fastapi, azure function and postgreSQL database. The language used in these elements is python. The azure function performs the scrapping function. It only attempts to fetch the url from the vic roads website and subsequently performs a post request to the api. When the api receives the post request, it downloads the excel sheets in memory. There is minimal lenience when selecting and finding the data. If the initial data pattern within the sheet changes, the post endpoint will fail. This was chosen as a result of time constraints.",
           },
         },
       ],
@@ -230,68 +78,76 @@ const drowzalertData: ProjectDTO = {
       cells: [
         {
           image: {
-            url: "/drowzalert.jpeg",
-            width: 800,
-            height: 600,
+            url: "/vic-camera-site-diagram.svg",
+            width: 500,
+            height: 500,
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          paragraph: {
+            body: "Once the data is parsed into arrays, the road and suburb pairs are checked to ensure that they do not currently exist in the database. If they do exist, a request to find the bounding box of the suburb is sent to overpass. Overpass is a free api which contains information for suburbs, roads, landmarks, etc. We then send another request to overpass with the suburb bounding box to retrieve the road line coordinates.",
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          paragraph: {
+            body: "Using google maps api and these road coordinates, we draw on the map blue and red lines to signify either mobile speed and seatbelt / phone cameras, respectively. This page is served statically via the api.",
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          image: {
+            url: "/vic-camera-site-redline.png",
+            width: 2874,
+            height: 1468,
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          image: {
+            url: "/vic-camera-site-blueline.png",
+            width: 2876,
+            height: 1624,
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          paragraph: {
+            title: "Team Work",
+            body: "We completed this project using git for source control and discord for commutation. We worked on a single branch due to a large enough separation of concerns. Reuben Cook, a work colleague, was easy to work with and was knowledgeable. He scripted the database and overpass logic, whilst I scripted the scrapping and post endpoint logic. We primarily worked together on video call after work hours to complete this project.",
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          paragraph: {
+            title: "Future Improvements and Challenges",
+            body: "In future, we plan to enhance the website by integrating fixed camera points on the map, along with a feature that allows users to report sightings of mobile cameras. This will enable real-time updates and greater accuracy. At our workplace, we predominantly work with typed languages, and as we developed and ran the project, we quickly realised the significant benefits of explicit typing. We slowly began using explicit typing within python to some extent, but not throughout. There is an ongoing technical challenge with retrieving overpass data, specifically for certain roads or suburbs. This issue results in missing data on the map. We're actively working on resolving this to ensure better data reliability going forward.",
           },
         },
       ],
     },
   ],
-  skills: [
-    "Working in a team",
-    "Project management",
-    "Using Python with webcam integration",
-    "OpenCV and dlib",
-  ],
-  challenges: [
-    "Fine-tuning eyelid detection for varying lighting conditions.",
-    "Integrating pre-trained models with real-time footage.",
-    "Managing team collaboration under a strict 48-hour deadline.",
-  ],
-  keyTakeaways: [
-    "Learned efficient use of OpenCV and dlib for real-time applications.",
-    "Strengthened problem-solving skills under a tight deadline.",
-    "Gained experience in collaborative development during hackathons.",
-  ],
-  stages: [
-    {
-      title: "Ideation",
-      detail: "Overall app scope and purpose were generated.",
-    },
-    {
-      title: "Task Management",
-      detail: "Tasks were outlined on a Trello board.",
-    },
-    {
-      title: "Research",
-      detail: "Explored potential solutions to the problem.",
-    },
-    {
-      title: "Python CV Logic for Webcam",
-      detail: "Implemented Python logic to access and process webcam footage.",
-    },
-    {
-      title: "Integration with Pre-trained Model",
-      detail: "Fed frame data into an eyelid tracking model.",
-    },
-    {
-      title: "Logic for Closed Eyes",
-      detail: "Differentiated between closed, open, and blinking eyes.",
-    },
-    {
-      title: "Refinement",
-      detail: "Adjusted logic for distinguishing between eye states.",
-    },
-  ],
 };
 
-// Repeat the same transformation for the other projects (hypercubeprojectData, matchiosData, tinygridData)
-
-const projects: ProjectDTO[] = [
-  vicCameraLocationsData,
-  drowzalertData,
-  // Add the other transformed projects here
-];
+const projects: ProjectDTO[] = [vicCameraLocationsData];
 
 export default projects;

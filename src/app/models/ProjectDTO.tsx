@@ -8,13 +8,8 @@ export default interface ProjectDTO {
   date: string;
   members: string[];
   links: NameLinkDTO[];
-  description: string;
   headLineImage: ImageType;
   rows: Row[];
-  skills: string[];
-  challenges: string[];
-  keyTakeaways: string[];
-  stages: { title: string; detail: string }[];
 }
 
 export interface Row {

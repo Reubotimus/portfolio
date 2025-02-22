@@ -15,10 +15,10 @@ function PortfolioCard({ project }: Props) {
       <Link href={`portfolio/${project.card.slug}`}>
         <figure className="rounded-t-2xl">
           <Image
-            src={project.card.image}
-            width={2000}
-            height={1000}
-            alt={project.card.imageAlt}
+            src={project.card.image.url}
+            width={project.card.image.width}
+            height={project.card.image.height}
+            alt={"card image"}
           ></Image>
         </figure>
         <div className="card-body">
