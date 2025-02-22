@@ -31,7 +31,7 @@ const ProjectsPage = () => {
         style={{ color: "#1944D0" }}
       >{`{ABOUT ME}`}</p>
       <p
-        className="font-hubot mt-10 text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl w-3/4"
+        className="font-hubot mt-10 text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl w-3/4"
         style={{ color: "#1944D0" }}
       >
         I&apos;m Harris Perdis, a junior software developer with a strong
@@ -49,7 +49,7 @@ const ProjectsPage = () => {
         style={{ color: "#1944D0" }}
       >{`{SKILLS}`}</p>
       <div
-        className="flex text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
+        className="flex text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl"
         style={{ color: "#1944D0" }}
       >
         <div className="flex flex-col font-space">
