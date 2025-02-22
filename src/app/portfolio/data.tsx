@@ -98,7 +98,7 @@ const vicCameraLocationsData: ProjectDTO = {
       cells: [
         {
           paragraph: {
-            body: "Using google maps api and these road coordinates, we draw on the map blue and red lines to signify either mobile speed and seatbelt / phone cameras, respectively. This page is served statically via the api.",
+            body: "Using the google maps api and these road coordinates, we draw on the map blue and red lines to signify either mobile speed and seatbelt / phone cameras, respectively. This page is served statically via the api.",
           },
         },
       ],
@@ -129,7 +129,7 @@ const vicCameraLocationsData: ProjectDTO = {
       cells: [
         {
           paragraph: {
-            title: "Team Work",
+            title: "Team",
             body: "We completed this project using git for source control and discord for commutation. We worked on a single branch due to a large enough separation of concerns. Reuben Cook, a work colleague, was easy to work with and was knowledgeable. He scripted the database and overpass logic, whilst I scripted the scrapping and post endpoint logic. We primarily worked together on video call after work hours to complete this project.",
           },
         },
@@ -139,8 +139,25 @@ const vicCameraLocationsData: ProjectDTO = {
       cells: [
         {
           paragraph: {
-            title: "Future Improvements and Challenges",
-            body: "In future, we plan to enhance the website by integrating fixed camera points on the map, along with a feature that allows users to report sightings of mobile cameras. This will enable real-time updates and greater accuracy. At our workplace, we predominantly work with typed languages, and as we developed and ran the project, we quickly realised the significant benefits of explicit typing. We slowly began using explicit typing within python to some extent, but not throughout. There is an ongoing technical challenge with retrieving overpass data, specifically for certain roads or suburbs. This issue results in missing data on the map. We're actively working on resolving this to ensure better data reliability going forward.",
+            title: "Future Improvements",
+            body: "In future, we plan to enhance the website by integrating fixed camera points on the map, along with a feature that allows users to report sightings of mobile cameras. The former is currently available on the vic roads official website. This will enable real-time updates and greater accuracy.",
+          },
+        },
+        {
+          image: {
+            url: "/vic-camera-site-fixed.png",
+            width: 2086,
+            height: 1206,
+          },
+        },
+      ],
+    },
+    {
+      cells: [
+        {
+          paragraph: {
+            title: "Challenges",
+            body: "At our workplace, we predominantly work with typed languages, and as we developed and ran the project, we quickly realised the significant benefits of explicit typing. We slowly began using explicit typing within python to some extent, but not throughout. There is an ongoing technical challenge with retrieving overpass data, specifically for certain roads or suburbs. This issue results in missing data on the map. We're actively working on resolving this to ensure better data reliability going forward.",
           },
         },
       ],
