@@ -136,7 +136,7 @@ const vicCameraLocationsData: ProjectDTO = {
         {
           paragraph: {
             title: "Challenges",
-            body: "At our workplace, we predominantly work with typed languages, and as we developed and ran the project, we quickly realised the significant benefits of explicit typing. We slowly began using explicit typing within python to some extent, but not throughout. There is an ongoing technical challenge with retrieving overpass data, specifically for certain roads or suburbs. This issue results in missing lines on the map. We're actively working on resolving this issue.",
+            body: "At our workplace, we predominantly work with typed languages, and as we developed and ran the project, we quickly realised the significant benefits of explicit typing. We would find issues only at runtime and therefore spend extra time debugging. We slowly began using explicit typing within python to some extent, but not throughout. There is an ongoing technical challenge with retrieving overpass data, specifically for certain roads or suburbs. This issue results in missing lines on the map. We're actively working on resolving this issue.",
           },
         },
       ],
