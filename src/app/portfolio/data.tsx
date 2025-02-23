@@ -161,12 +161,12 @@ const drowzalert: ProjectDTO = {
   },
   card: {
     title: "drowzalert",
-    date: "2/2023",
+    date: "3/2023",
     slug: "drowzalert",
     image: { url: "/drowzalert.jpeg", width: 1920, height: 1080 },
     tags: [tags[2], tags[1], tags[3]],
   },
-  date: "2/2025",
+  date: "3/2023",
   members: [
     "Harris Perdis [Computer Science Student]",
     "Hung Ba Huynh [Computer Science Student]",
