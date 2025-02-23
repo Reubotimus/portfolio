@@ -17,17 +17,20 @@ export default function ProjectPage() {
   const nextProject = Projects[nextIndex];
 
   const elementRef = useRef<HTMLDivElement | null>(null);
-  const [hasNavigated, setHasNavigated] = useState(false);
 
   useEffect(() => {
-    if (!elementRef.current || hasNavigated) return;
+    if (!elementRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setHasNavigated(true);
-            router.push(nextProject.card.slug + "#start");
+            var d = document.getElementById("content");
+            if (d) {
+              d.className += "overlay";
+            }
+            window.scrollTo(0, 0);
+            router.push(nextProject.card.slug);
           }
         });
       },
@@ -41,7 +44,7 @@ export default function ProjectPage() {
     observer.observe(elementRef.current);
 
     return () => observer.disconnect();
-  }, [hasNavigated, nextProject.card.slug, router]);
+  }, [nextProject.card.slug]);
 
   if (projectIndex === -1) {
     return (
@@ -52,7 +55,7 @@ export default function ProjectPage() {
   }
 
   return (
-    <>
+    <div id="content">
       <div className="py-10 max-w-5xl mx-auto" style={{ color: "#1944D0" }}>
         <div className="mb-10" style={{ color: "#1944D0" }}>
           <Link href="/#portfolio">
@@ -230,6 +233,6 @@ export default function ProjectPage() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
