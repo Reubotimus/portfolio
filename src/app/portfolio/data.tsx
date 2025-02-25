@@ -159,7 +159,7 @@ const toastyToes: ProjectDTO = {
   name: "Toasty Toes",
   type: "Ecommerce Store",
   headLineImage: {
-    url: "/toasty-toes.webp",
+    url: "/toasty-toes.png",
     width: 1920,
     height: 1080,
   },
@@ -167,7 +167,7 @@ const toastyToes: ProjectDTO = {
     title: "Toasty Toes",
     date: "10/2024",
     slug: "toasty-toes",
-    image: { url: "/toasty-toes.webp", width: 1920, height: 1080 },
+    image: { url: "/toasty-toes.png", width: 1920, height: 1080 },
     tags: [tags[10], tags[11], tags[9], tags[8]],
   },
   date: "10/2024",
