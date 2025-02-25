@@ -18,34 +18,55 @@ export default function ProjectPage() {
 
   const elementRef = useRef<HTMLDivElement | null>(null);
 
+  // "crossed" means the user has scrolled so the next project is fully in view
+  const [crossed, setCrossed] = useState(false);
+
+  // If a user wants multiple "scroll passes," you can track a counter:
+  // const [scrollPasses, setScrollPasses] = useState(0);
+
   useEffect(() => {
     if (!elementRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          // If we want "full" visibility, set threshold = 1 below
           if (entry.isIntersecting) {
-            var d = document.getElementById("content");
-            if (d) {
-              d.className += "overlay";
-            }
-            window.scrollTo(0, 0);
-            router.push(nextProject.card.slug);
+            setCrossed(true);
+
+            // If you need multiple passes, do:
+            // setScrollPasses((prev) => prev + 1);
           }
         });
       },
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.5,
+        // threshold=1 means the element must be 100% in view
+        threshold: 1,
       }
     );
 
     observer.observe(elementRef.current);
 
     return () => observer.disconnect();
-  }, [nextProject.card.slug]);
+  }, []);
 
+  // Optional: Add a short delay or other logic once fully in view
+  useEffect(() => {
+    if (crossed) {
+      // If you want a short delay:
+      const timer = setTimeout(() => {
+        console.log("Navigated to: " + nextProject.card.title);
+        router.push(nextProject.card.slug);
+        window.scrollTo(0, 0);
+      }, 500); // 0.5s delay (adjust to taste)
+
+      return () => clearTimeout(timer);
+    }
+  }, [crossed, nextProject, router]);
+
+  // If no valid project is found
   if (projectIndex === -1) {
     return (
       <div className="flex justify-center items-center text-xl font-hubot p-6 sm:p-12 md:p-24 lg:p-32 xl:p-48">
@@ -70,6 +91,7 @@ export default function ProjectPage() {
           </Link>
         </div>
         <div>
+          {/* Current Project */}
           <div className="pb-5">
             <p className="font-space text-md">{`{${project.type}}`}</p>
             <h1 className="font-space text-5xl mt-2">{project.name}</h1>
@@ -122,6 +144,7 @@ export default function ProjectPage() {
             alt="image"
           />
 
+          {/* Dynamically Render Rows */}
           {project.rows.map((row, rowIndex) => (
             <div
               className={`grid grid-cols-1 md:grid-cols-${row.cells.length} gap-4 py-5`}
@@ -169,12 +192,14 @@ export default function ProjectPage() {
               ))}
             </div>
           ))}
+
+          {/* Next Project Preview */}
           {projectIndex !== nextIndex && (
             <div className="mt-32">
               <hr
                 className="h-px border-0"
                 style={{ backgroundColor: "#1944D0" }}
-              ></hr>
+              />
               <p className="font-hubot text-xl pt-1">Next Project</p>
               <p className="font-hubot text-sm">Scroll to View</p>
               <div className="relative pb-5 mt-20">
@@ -220,6 +245,8 @@ export default function ProjectPage() {
                   </tbody>
                 </table>
               </div>
+
+              {/* The element we observe to trigger navigation */}
               <div ref={elementRef}>
                 <Image
                   className="m-auto"
