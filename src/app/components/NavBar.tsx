@@ -9,20 +9,20 @@ const NavBar = () => {
       <div className="navbar">
         <div className="navbar-start">
           <Link href="/">
-            <h1 className="text-2xl lg:text-3xl font-space">Harris Perdis</h1>
+            <h1 className="text-2xl lg:text-3xl font-space">Reuben Cook</h1>
           </Link>
         </div>
         <div className="navbar-end">
           <div className="pl-5 text-2xl lg:text-3xl">
             <Link
-              href="https://www.linkedin.com/in/harris-perdis-912308310"
+              href="https://www.linkedin.com/in/reuben-cook-software/"
               target="_blank"
             >
               <AiFillLinkedin />
             </Link>
           </div>
           <div className="pl-5 text-2xl lg:text-3xl">
-            <Link href="https://github.com/HarrisAsync" target="_blank">
+            <Link href="https://github.com/Reubotimus" target="_blank">
               <FaGithub />
             </Link>
           </div>

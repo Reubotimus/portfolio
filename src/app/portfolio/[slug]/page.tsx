@@ -143,7 +143,7 @@ export default function ProjectPage() {
                       {cell.paragraph.title ? (
                         <div>
                           <p
-                            className="font-space text-sm pb-2"
+                            className="font-space text-l font-bold pb-2"
                             style={{ color: "#1944D0" }}
                           >
                             {`{${cell.paragraph.title}}`}
