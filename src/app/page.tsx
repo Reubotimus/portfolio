@@ -1,7 +1,9 @@
 import PortfolioCard from "./components/PortfolioCard";
-import Projects from "./portfolio/data";
+import { getAllProjects } from "@/lib/projects";
 
 const ProjectsPage = () => {
+  const projects = getAllProjects();
+
   return (
     <div className="mx-auto" style={{ maxWidth: "2000px" }}>
       <h1
@@ -22,7 +24,7 @@ const ProjectsPage = () => {
         style={{ color: "#1944D0" }}
       >{`{PORTFOLIO}`}</p>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-y-10 gap-x-5">
-        {Projects.map((project, index) => {
+        {projects.map((project, index) => {
           return <PortfolioCard key={index} project={project} />;
         })}
       </div>
