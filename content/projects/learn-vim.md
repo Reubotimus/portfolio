@@ -24,7 +24,10 @@ headLineImage:
   height: 834
 members:
   - Reuben Cook [Software Developer]
-links: []
+links:
+  - name: WEBSITE
+    link: https://vim-practice.vercel.app/
+    private: false
 ---
 
 # Project Description
