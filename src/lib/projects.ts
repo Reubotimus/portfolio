@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
-import type ProjectDTO, { ImageType } from "@/app/models/ProjectDTO";
+import type ProjectDTO from "@/app/models/ProjectDTO";
+import type { ImageType } from "@/app/models/ProjectDTO";
 import type NameLinkDTO from "@/app/models/NameLinkDTO";
 
 const contentDir = path.join(process.cwd(), "content", "projects");

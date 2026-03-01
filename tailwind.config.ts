@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         hubot: ["Hubot Sans"],
-        space: ["Space Mono"],
+        space: ["Space Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
     },
   },
